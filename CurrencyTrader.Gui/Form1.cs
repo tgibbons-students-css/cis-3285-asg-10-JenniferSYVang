@@ -39,7 +39,7 @@ namespace CurrencyTrader.Gui
             var tradeParser = new SimpleTradeParser(tradeValidator, tradeMapper);
 
             //var tradeStorage = new AdoNetTradeStorage(logger);
-            ITradeStorage tradeStorage = new AsynchTradeStorage(logger);
+            ITradeStorage tradeStorage = new AsynchTradeStorage(logger); // calls our new decorator class
             tradeProcessor = new TradeProcessor(tradeDataProvider, tradeParser, tradeStorage);
         }
 
